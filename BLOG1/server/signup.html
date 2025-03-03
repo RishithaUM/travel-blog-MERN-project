@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="auth-container">
+    <h1>Signup</h1>
+    <form id="signup-form">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Signup</button>
+    </form>
+
+    <button id="login-btn">Already have an account? Login</button>
+  </div>
+
+  <script>
+    document.getElementById("signup-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      fetch('http://localhost:5000/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      })
+      .then(response => response.json())
+      .then(data => {
+        window.location.href = "/login.html"; // Redirect to Login page after signup
+      })
+      .catch(error => {
+        console.error('Signup failed:', error);
+      });
+    });
+
+    document.getElementById("login-btn").addEventListener("click", function() {
+      window.location.href = "/login.html"; // Redirect to Login page
+    });
+  </script>
+
+</body>
+</html>

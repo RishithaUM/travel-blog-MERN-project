@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="https://i.pinimg.com/originals/bc/cf/d8/bccfd853a8244bd0df685aa526052c7c.jpg" alt="">
+        </div>
+        <div class="slide fade">
+            <img src="https://img.freepik.com/premium-photo/beach-sunset-backdrop_1060272-5235.jpg">
+        </div>
+        <div class="slide fade">
+            <img src="https://globoprime.com/wp-content/uploads/2023/06/bigstock-White-marble-Taj-Mahal-in-Indi-31786310-1.jpg" alt="">
+        </div>
+        <div class="slide fade">
+            <img src="https://www.livingstone.cz/upload/responsive/kraken/info-o-zemich/afrika/Egypt-hlavicka-02.jpg" alt="">
+        </div>
+        <div class="slide fade">
+            <img src="https://www.tmb.ie/wp/wp-content/uploads/2017/12/eva-darron-oCdVtGFeDC0-unsplash.jpg" alt="">
+        </div>
+    </div>
+    
+    <script>
+        let slideIndex = 0;
+        let slides = document.getElementsByClassName("slide");
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.opacity = "0";
+                slides[i].style.position = "absolute";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.opacity = "1";
+            slides[slideIndex - 1].style.position = "relative";
+            setTimeout(showSlides, 3000);
+        }
+
+        showSlides();
+    </script>
+    <div class="content">
+        <h1>Welcome to Your Travel Journey</h1>
+        <p>Explore the world's most beautiful destinations with us.</p>
+      
+        <button onclick="window.location.href='http://localhost:5173'" class="btn">Start Exploring</button>
+    </div>
+</body>
+</html>
