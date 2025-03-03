@@ -63,7 +63,7 @@ npm start  # Start the backend server
 Feel free to fork this repository, open issues, and submit pull requests. Any contributions are welcome!
 
 ## License
-This project is open-source and available under the **MIT License**.
+This project is open-source and available.
 
 ---
 Happy Coding! 🚀
